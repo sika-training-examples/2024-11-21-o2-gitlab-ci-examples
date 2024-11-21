@@ -1,13 +1,7 @@
-stages:
-  - test
-
 test1:
-  stage: test
   script: echo Test1!
 
 test2:
-  stage: test
   script: echo Test2!
   needs:
     - test1
-    
