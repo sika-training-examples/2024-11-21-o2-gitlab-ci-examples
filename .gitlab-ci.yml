@@ -1,5 +1,5 @@
 job:
-  script: Do something
+  script: echo Do something
 
 triger-pipelines:
   trigger: o2/hegi
