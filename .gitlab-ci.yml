@@ -1,13 +1,9 @@
-Build Frontend:
-  script: echo Build Frontend ...
-  rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH || $CI_MERGE_REQUEST_ID
-      changes:
-        - frontend/**/*
+# .gitlab-ci.yml
 
-Build Backend:
-  script: echo Build Backend ...
-  rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH || $CI_MERGE_REQUEST_ID
-      changes:
-        - backend/**/*
+workflow:
+  name: Pipeline $CI_COMMIT_REF_NAME $CI_COMMIT_SHORT_SHA / $CI_COMMIT_TITLE
+
+job:
+  script:
+    - slu git tag-next-calver
+  tags: [shell]
