@@ -4,6 +4,10 @@ defaults:
     IMAGE: $CI_REGISTRY_IMAGE:$TAG
   tags: [shell]
 
+stages:
+  - build
+  - test
+
 build:
   stage: build
   script:
