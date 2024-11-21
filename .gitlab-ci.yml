@@ -7,7 +7,7 @@ variables:
 
 deploy:
   script:
-    - helm upgrade --install hello --repo https://helm.sikalabs.io hello-world --namespace $NAMESPACE --create-namespace --set host=$HOST --set TEXT="$CI_COMMIT_REF_NAME"
+    - helm upgrade --install hello --repo https://helm.sikalabs.io hello-world --namespace $NAMESPACE --create-namespace --set host=$HOST --set TEXT="$CI_COMMIT_REF_NAME" --set replicas=4
   environment:
     name: $CI_COMMIT_REF_SLUG
     url: https://$HOST
