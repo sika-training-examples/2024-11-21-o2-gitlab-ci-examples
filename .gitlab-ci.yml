@@ -1,9 +1,12 @@
+# variables:
+#   GIT_CLEAN_FLAGS: -ffdx -e .yarn-cache
+
+image: node:20
+
+cache:
+  paths:
+    - .yarn-cache
+
 job:
-  cache:
-    key: ${CI_COMMIT_REF_SLUG}
-    paths:
-      - now
   script:
-    - date >> now
-    - cat now
-  tags: [shell]
+    - yarn install --frozen-lockfile --cache-folder .yarn-cache --prefer-offline
