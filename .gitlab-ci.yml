@@ -1,2 +1,7 @@
-hello world:
-  script: echo Hello World! && false
+foo:
+  script: echo Hello World!
+
+bar:
+  script:
+    - echo Hello World!
+    - echo Ahoj Svete!
