@@ -1,2 +1,2 @@
 deploy:
-  script: Deploy to https://$CI_PROJECT_PATH_SLUG-$CI_COMMIT_REF_SLUG.dev.sikademo.com
+  script: echo Deploy to https://$CI_PROJECT_PATH_SLUG-$CI_COMMIT_REF_SLUG.dev.sikademo.com
