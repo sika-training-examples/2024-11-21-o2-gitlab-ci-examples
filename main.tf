@@ -3,7 +3,7 @@ terraform {
 }
 
 resource "random_pet" "foo" {
-    count = 20
+    count = 25
 }
 
 output "foo" {
