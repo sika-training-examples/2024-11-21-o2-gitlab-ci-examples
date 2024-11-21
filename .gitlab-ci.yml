@@ -1,37 +1,6 @@
-# .gitlab-ci.yml
+image: sikalabs/slu
 
-stages:
-  - unit_test
-  - integration_test
-  - build
-  - deploy
-
-unit_test:
-  stage: unit_test
-  script: echo Unit Test ...
-  rules:
-    - if: $CI_COMMIT_BRANCH
-    - if: $CI_COMMIT_TAG
-    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
-
-integration_test:
-  stage: integration_test
-  script: echo Integration Test ...
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
-
-build:
-  stage: build
-  script: echo Build ...
-  rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
-    - if: $CI_COMMIT_TAG
-
-deploy:
-  stage: deploy
-  script: echo Deploy ...
-  rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
-      when: manual
-      allow_failure: false
-    - if: $CI_COMMIT_TAG
+job:
+  script:
+    - slu git tag-next-calver
+    - git push origin `slu git get-last-calver`
