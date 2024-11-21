@@ -1,17 +1,19 @@
-# .gitlab-ci.yml
-
 stages:
   - build
   - test
 
+pre:
+  stage: .pre
+  script: echo Pre ...
+
 build:
   stage: build
-  script: echo Build! && false
+  script: echo Build!
 
-test1:
+test:
   stage: test
-  script: echo Test1!
+  script: echo Test!
 
-test2:
-  stage: test
-  script: echo Test2!
+post:
+  stage: .post
+  script: echo Post ...
