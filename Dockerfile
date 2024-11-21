@@ -1,3 +1,2 @@
-FROM ubuntu
-RUN apt-get update && apt-get install -y cowsay
-CMD ["/usr/games/cowsay", "Hello O2"]
+FROM nixery.dev/cowsay
+CMD ["cowsay", "Hello O2"]
