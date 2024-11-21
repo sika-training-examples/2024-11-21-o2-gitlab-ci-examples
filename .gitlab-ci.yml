@@ -6,3 +6,4 @@ job:
   script:
     - date >> now
     - cat now
+  tags: [shell]
