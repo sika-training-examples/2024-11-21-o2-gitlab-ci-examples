@@ -1,3 +1,9 @@
 include:
   - project: o2/gitlab-ci
     file: terraform.gitlab-ci.yml
+
+nightly:
+  script: echo Nightly build ...
+  rules:
+    - if: $CI_PIPELINE_SOURCE != "schedule"
+      when: never
