@@ -10,3 +10,13 @@ deploy:
   environment:
     name: $CI_COMMIT_REF_SLUG
     url: https://$HOST
+    on_stop: stop
+
+stop:
+  variables:
+    GIT_STRATEGY: none
+  script: helm uninstall hello
+  when: manual
+  environment:
+    name: $CI_COMMIT_REF_SLUG
+    action: stop
