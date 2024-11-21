@@ -1,11 +1,8 @@
-# variables:
-#   GIT_CLEAN_FLAGS: -ffdx -e .yarn-cache
+variables:
+  GIT_CLEAN_FLAGS: -ffdx -e .yarn-cache
 
 image: node:20-buster
 
-cache:
-  paths:
-    - .yarn-cache
 
 job:
   script:
