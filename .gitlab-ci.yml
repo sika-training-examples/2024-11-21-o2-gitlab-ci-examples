@@ -1,11 +1,17 @@
-include:
-  - project: 'o2/gitlab-ci'
-    file: 'docker.gitlab-ci.yml'
+# .gitlab-ci.yml
 
-variables:
-  DOCKERFILE: ./src/Dockerfile
-  CONTEXT: ./src
+pipeline_a:
+  trigger:
+    include: a/.gitlab-ci.yml
+    strategy: depend
+  rules:
+    - changes:
+        - a/**
 
-test:
-  stage: .post
-  script: docker run $IMAGE
+pipeline_b:
+  trigger:
+    include: b/.gitlab-ci.yml
+    strategy: depend
+  rules:
+    - changes:
+        - b/**
