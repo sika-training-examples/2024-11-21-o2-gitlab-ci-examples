@@ -1,5 +1,22 @@
-include: https://gitlab.sikademo.com/o2/gitlab-ci/-/raw/main/hello_world.gitlab-ci.yml
+# .gitlab-ci.yml
 
-prepare:
-  stage: .pre
-  script: echo ....
+stages:
+  - build
+  - test
+  - deploy
+
+build:
+  stage: build
+  script: echo Build! && sleep 10
+
+test1:
+  stage: test
+  script: echo Test1!
+
+test2:
+  stage: test
+  script: echo Test2! && sleep 10
+
+nasazeni:
+  stage: deploy
+  script: echo deploy
