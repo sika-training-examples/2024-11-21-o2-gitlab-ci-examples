@@ -3,6 +3,3 @@ include: https://gitlab.sikademo.com/o2/gitlab-ci/-/raw/main/hello_world.gitlab-
 prepare:
   stage: .pre
   script: echo ....
-
-stages:
-  script: echo "Hello, World!"
