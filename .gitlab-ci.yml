@@ -2,7 +2,12 @@
 
 image: golang:1.22-bullseye
 
+stages:
+  - build
+  - test
+
 build:
+  stage: build
   parallel:
     matrix:
       - GOOS:
@@ -17,3 +22,7 @@ build:
       - hello-${GOOS}-${GOARCH}
   script:
     - go build -o hello-${GOOS}-${GOARCH} main.go
+
+test:
+  stage: test
+  script: ./hello-linux-amd64
