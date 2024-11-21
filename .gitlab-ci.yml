@@ -1,4 +1,13 @@
-job:
+# .gitlab-ci.yml
+
+push:
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "push"
   script:
-    - echo $HELLO
-    - cat $HELLO
+    - echo push
+
+run:
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "web"
+  script:
+    - echo run
