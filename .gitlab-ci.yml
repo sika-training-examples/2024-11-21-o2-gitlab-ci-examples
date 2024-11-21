@@ -1,3 +1,5 @@
+image: sikalabs/ci
+
 hello:
-  script: echo hello o2
+  script: slu random password
   tags: [kubernetes]
