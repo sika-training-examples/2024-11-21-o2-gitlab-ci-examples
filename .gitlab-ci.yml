@@ -1,7 +1,11 @@
 foo:
-  script: echo Hello World!
+  script:
+    - cat /etc/hostname
+    - cat /etc/os-release
 
 bar:
   script:
-    - echo Hello World! && false
-    - echo Ahoj Svete!
+    - cat /etc/hostname
+    - cat /etc/os-release
+  tags:
+    - shell
