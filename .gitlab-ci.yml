@@ -1,9 +1,2 @@
-include:
-  - project: o2/gitlab-ci
-    file: terraform.gitlab-ci.yml
-
-nightly:
-  stage: .pre
-  script: echo Nightly build ...
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "schedule"
+hello:
+  script: echo hello o2
