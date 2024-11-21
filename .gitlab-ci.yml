@@ -1,4 +1,4 @@
-image: sikalabs/slu
+image: sikalabs/ci
 
 job:
   script:
