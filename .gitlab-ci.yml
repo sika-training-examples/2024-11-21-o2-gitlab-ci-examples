@@ -16,8 +16,9 @@ deploy:
 stop:
   variables:
     GIT_STRATEGY: none
-  script: helm uninstall hello
+  script: helm uninstall hello --namespace $NAMESPACE
   when: manual
+  allow_failure: false
   environment:
     name: $CI_COMMIT_REF_SLUG
     action: stop
