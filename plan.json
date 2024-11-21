@@ -1,5 +1,5 @@
 {
     "create": 8,
-    "update": 2,
+    "update": "foo",
     "delete": -7
   }
