@@ -6,7 +6,7 @@ stages:
 
 build:
   stage: build
-  script: echo Run build ... && false
+  script: echo Run build ...
   allow_failure: false
   when: manual
 
