@@ -1,9 +1,17 @@
-foo:
-  script:
-    - /usr/games/cowsay Hello O2
+# .gitlab-ci.yml
 
-bar:
-  script:
-    - /usr/games/cowsay Hello O2
-  tags:
-    - shell
+stages:
+  - build
+  - test
+
+build:
+  stage: build
+  script: echo Build!
+
+test1:
+  stage: test
+  script: echo Test1!
+
+test2:
+  stage: test
+  script: echo Test2!
