@@ -1,4 +1,4 @@
-# 
+#
 import json
 
 SERVICES = (
@@ -23,7 +23,7 @@ def make_service(name):
         }
     }
 
-with open(".gitlab-ci.generated.yml", "w") as f:
+with open(".gitlab-ci.yml", "w") as f:
     pipeline = {}
     pipeline.update({
         "stages": ["build", "deploy"]
