@@ -1,10 +1,19 @@
-test1:
-  script: echo Test1!
-  needs:
-    - test2
+# .gitlab-ci.yml
 
+before_script:
+  - echo Global before
 
-test2:
-  script: echo Test2!
-  needs:
-    - test1
+after_script:
+  - echo Global after
+
+job1:
+  script: echo Job1!
+
+job2:
+  script: echo Job2! && false
+
+job3:
+  before_script:
+    - echo Local before
+  after_script: []
+  script: echo Job3!
