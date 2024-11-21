@@ -1,1 +1,10 @@
 include: https://gitlab.sikademo.com/o2/gitlab-ci/-/raw/main/hello_world.gitlab-ci.yml
+
+stages:
+  - prepare
+  - hello
+  - world
+
+prepare:
+  stage: prepare
+  script: echo ....
