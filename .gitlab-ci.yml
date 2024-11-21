@@ -5,18 +5,55 @@ stages:
   - test
   - deploy
 
-build:
+linux build:
   stage: build
-  script: echo Build! && sleep 10
+  script: sleep 10 && echo Done
 
-test1:
+mac build:
+  stage: build
+  script: sleep 20 && echo Done
+
+lint:
   stage: test
-  script: echo Test1!
+  # needs: []
+  script: echo Done
 
-test2:
+linux unit tests:
   stage: test
-  script: echo Test2! && sleep 10
+  # needs:
+  #   - linux build
+  script: echo Done
 
-nasazeni:
+linux e2e tests:
+  stage: test
+  # needs:
+  #   - linux build
+  script: sleep 10 && echo Done
+
+mac unit tests:
+  stage: test
+  # needs:
+  #   - mac build
+  script: sleep 5 && echo Done
+
+mac e2e tests:
+  stage: test
+  # needs:
+  #   - mac build
+  script: sleep 30 && echo Done
+
+release linux:
   stage: deploy
-  script: echo deploy
+  script: "echo Done"
+  # needs:
+  #   - lint
+  #   - linux unit tests
+  #   - linux e2e tests
+
+release mac:
+  stage: deploy
+  script: "echo Done"
+  # needs:
+  #   - lint
+  #   - mac unit tests
+  #   - mac e2e tests
