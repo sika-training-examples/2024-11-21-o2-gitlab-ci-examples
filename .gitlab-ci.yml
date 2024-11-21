@@ -1,4 +1,6 @@
-include: https://gitlab.sikademo.com/o2/gitlab-ci/-/raw/main/docker.gitlab-ci.yml
+include:
+  - project: 'o2/gitlab-ci'
+    file: 'docker.gitlab-ci.yml'
 
 variables:
   DOCKERFILE: ./src/Dockerfile
