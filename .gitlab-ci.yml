@@ -1,11 +1,13 @@
 Build Frontend:
   script: echo Build Frontend ...
   rules:
-    - changes:
-        - frontend/**
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH || $CI_MERGE_REQUEST_ID
+      changes:
+        - frontend/**/*
 
 Build Backend:
   script: echo Build Backend ...
   rules:
-    - changes:
-        - backend/**
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH || $CI_MERGE_REQUEST_ID
+      changes:
+        - backend/**/*
