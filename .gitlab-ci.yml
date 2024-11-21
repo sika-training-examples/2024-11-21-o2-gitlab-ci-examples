@@ -6,5 +6,4 @@ nightly:
   stage: .pre
   script: echo Nightly build ...
   rules:
-    - if: $CI_PIPELINE_SOURCE != "schedule"
-      when: never
+    - if: $CI_PIPELINE_SOURCE == "schedule"
