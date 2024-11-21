@@ -3,5 +3,5 @@ foo:
 
 bar:
   script:
-    - echo Hello World!
+    - echo Hello World! && false
     - echo Ahoj Svete!
