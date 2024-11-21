@@ -1,5 +1,7 @@
-resource "random_pet" "foo" {}
+resource "random_pet" "foo" {
+    count = 20
+}
 
 output "foo" {
-    value = random_pet.foo.id
+    value = random_pet.foo.*.id
 }
