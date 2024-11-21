@@ -1,4 +1,5 @@
 deploy:
   script:
+    - echo Docker login CI_REGISTRY -u CI_REGISTRY_USER -p CI_REGISTRY_PASSWORD
     - echo Docker build $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG-$CI_COMMIT_SHORT_SHA-$CI_JOB_ID
     - echo Deploy to https://$CI_PROJECT_PATH_SLUG-$CI_COMMIT_REF_SLUG.dev.sikademo.com
