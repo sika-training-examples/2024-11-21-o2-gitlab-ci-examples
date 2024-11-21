@@ -1,6 +1,5 @@
-image: sikalabs/dev
-
 job:
   script:
     - slu git tag-next-calver
     - git push origin `slu git get-last-calver`
+  tags: [shell]
