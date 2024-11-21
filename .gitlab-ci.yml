@@ -2,7 +2,7 @@
 #   GIT_CLEAN_FLAGS: -ffdx -e .yarn-cache
 
 image:
-  name: node:20
+  name: sikalabs/ci
   entrypoint: [ '/bin/bash', '-c' ]
 
 cache:
