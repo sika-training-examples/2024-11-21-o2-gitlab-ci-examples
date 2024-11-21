@@ -1,8 +1,9 @@
 default:
-  variables:
-    TAG: $CI_COMMIT_REF_SLUG-$CI_COMMIT_SHORT_SHA-$CI_PIPELINE_ID
-    IMAGE: $CI_REGISTRY_IMAGE:$TAG
   tags: [shell]
+
+variables:
+  TAG: $CI_COMMIT_REF_SLUG-$CI_COMMIT_SHORT_SHA-$CI_PIPELINE_ID
+  IMAGE: $CI_REGISTRY_IMAGE:$TAG
 
 stages:
   - build
