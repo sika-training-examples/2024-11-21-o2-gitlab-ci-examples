@@ -1,4 +1,14 @@
+# .gitlab-ci.yml
+
+stages:
+  - build
+  - test
+
 build:
-  # script: echo Run build ...
+  stage: build
   script: echo Run build ... && false
   allow_failure: true
+
+test:
+  stage: test
+  script: echo Run test ...
