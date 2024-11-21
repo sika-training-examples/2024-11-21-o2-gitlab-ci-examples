@@ -1,28 +1,5 @@
-# .gitlab-ci.yml
+include: https://gitlab.sikademo.com/o2/gitlab-ci/-/raw/main/docker.gitlab-ci.yml
 
-stages:
-  - deploy dev
-  - deploy prod
-
-.dev:
-  stage: deploy dev
-  variables:
-    ENV: dev
-
-.prod:
-  stage: deploy prod
-  variables:
-    ENV: prod
-
-.deploy:
-  script: echo Deploy $ENV
-
-deploy dev:
-  extends:
-    - .deploy
-    - .dev
-
-deploy prod:
-  extends:
-    - .deploy
-    - .prod
+test:
+  stage: .post
+  script: docker run $CI_REGISTRY_IMAGE
