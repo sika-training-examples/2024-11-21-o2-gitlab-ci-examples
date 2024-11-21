@@ -1,11 +1,9 @@
 foo:
   script:
-    - cat /etc/hostname
-    - cat /etc/os-release
+    - /usr/games/cowsay Hello O2
 
 bar:
   script:
-    - cat /etc/hostname
-    - cat /etc/os-release
+    - /usr/games/cowsay Hello O2
   tags:
     - shell
