@@ -1,4 +1,4 @@
 test:
   image: nixery.dev/shell/kubectl
   script:
-    - kubectl get node
+    - /bin/bash -c "kubectl get node"
