@@ -1,4 +1,4 @@
 test:
-  image: sikalabs/ci
+  image: nixery.dev/shell/kubectl
   script:
-    - slu random password
+    - kubectl get node
