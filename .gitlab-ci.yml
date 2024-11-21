@@ -3,7 +3,7 @@
 
 image:
   name: sikalabs/ci
-  entrypoint: [ '/bin/bash', '-c' ]
+  entrypoint: [ "" ]
 
 cache:
   paths:
