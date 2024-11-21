@@ -5,3 +5,4 @@ test:
   artifacts:
     reports:
       junit: report.xml
+      terraform: plan.json
