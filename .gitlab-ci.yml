@@ -1,9 +1,8 @@
-# .gitlab-ci.yml
-
-workflow:
-  name: Pipeline $CI_COMMIT_REF_NAME $CI_COMMIT_SHORT_SHA / $CI_COMMIT_TITLE
-
 job:
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+      - now
   script:
-    - slu git tag-next-calver
-  tags: [shell]
+    - date >> now
+    - cat now
