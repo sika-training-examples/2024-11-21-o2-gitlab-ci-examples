@@ -1,5 +1,9 @@
 include: https://gitlab.sikademo.com/o2/gitlab-ci/-/raw/main/docker.gitlab-ci.yml
 
+variables:
+  DOCKERFILE: ./src/Dockerfile
+  CONTEXT: ./src
+
 test:
   stage: .post
   script: docker run $IMAGE
