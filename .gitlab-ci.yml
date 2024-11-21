@@ -1,2 +1,4 @@
 deploy:
-  script: echo Deploy to https://$CI_PROJECT_PATH_SLUG-$CI_COMMIT_REF_SLUG.dev.sikademo.com
+  script:
+    - echo Docker build $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG-$CI_COMMIT_SHORT_SHA-$CI_JOB_ID
+    - echo Deploy to https://$CI_PROJECT_PATH_SLUG-$CI_COMMIT_REF_SLUG.dev.sikademo.com
