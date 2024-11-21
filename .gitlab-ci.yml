@@ -3,6 +3,7 @@ include:
     file: terraform.gitlab-ci.yml
 
 nightly:
+  stage: .pre
   script: echo Nightly build ...
   rules:
     - if: $CI_PIPELINE_SOURCE != "schedule"
